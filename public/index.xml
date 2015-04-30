@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>یادداشتهای میلاد خواجوی</title>
-    <link>http://khajavi.github.io/</link>
+    <link>http://blog.khajavi.ir/</link>
     <description>Recent content on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
     <lastBuildDate>Fri, 25 Nov 2011 06:56:18 +0430</lastBuildDate>
-    <atom:link href="http://khajavi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.khajavi.ir/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>معرّفی پروژهٔ تنزیل</title>
-      <link>http://khajavi.github.io/tanzil/</link>
+      <link>http://blog.khajavi.ir/tanzil/</link>
       <pubDate>Fri, 25 Nov 2011 06:56:18 +0430</pubDate>
       
-      <guid>http://khajavi.github.io/tanzil/</guid>
+      <guid>http://blog.khajavi.ir/tanzil/</guid>
       <description>&lt;p&gt;چندی پیش یکی از اعضای &lt;a href=&#34;http://zekr.org/&#34;&gt;پروژهٔ قرآنی ذکر&lt;/a&gt;، پیامی به گروه فرستاد جهت تولید نرم‌افزار مشابه ذکر برای اندروید، پس از اون با پروژهٔ &lt;a href=&#34;https://github.com/ahmedre/quran_android&#34;&gt;Quran Android&lt;/a&gt; آشنا شدم که در همین راستا گام برداشته‌اند در حین کار با این نرم‌افزار با &lt;a href=&#34;http://tanzil.net/&#34;&gt;پروژهٔ قرآنی تنزیل&lt;/a&gt; که توسط دکتر &lt;a href=&#34;http://sharif.edu/~zarrabi/&#34;&gt;حمید ضرابی‌زاده&lt;/a&gt; تأسیس شده است، آشنا شدم.&lt;/p&gt;
 
 &lt;p&gt;همان‌طور که در &lt;a href=&#34;http://tanzil.net/wiki/Tanzil_Project&#34;&gt;صفحهٔ ویکی پروژه&lt;/a&gt; ذکر شده، این وب‌گاه در نظر دارد یک متن دقیقِ استاندارد از متن قرآن کریم را بر روی اینترنت قرار دهد. این کار از سال ۲۰۰۷ شروع شده و تا کنون بسیاری از برنامه‌نویسان از این منبع برای دسترسی به متن قرآن از آن استفاده می‌کنند.&lt;/p&gt;
