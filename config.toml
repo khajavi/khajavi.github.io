@@ -1,0 +1,19 @@
+languageCode = "fa-ir"
+contentdir = "content"
+publishdir = "public"
+builddrafts = false
+baseurl = "http://khajavi.github.io/"
+canonifyurls = true
+title = "یادداشتهای میلاد خواجوی"
+author = "میلاد"
+
+[indexes]
+   category = "categories"
+   tag = "tags"
+[Params]
+  AuthorName = "میلاد"
+  github = "khajavi"
+  bitbucket = "khajavi"
+  twitter = "khajavi"
+  email = "khajavi@gmail.com"
+  description = "یک وبلاگ دیگر از یک برنامه نویس دیگر"
