@@ -18,3 +18,17 @@ title = "یادداشت‌های پراکنده"
 
 ## اسکالا
 * [scaladiagrams](https://github.com/mikeyhu/scaladiagrams) کتابخانه‌ای برای رسم کلاس‌دیاگرام 
+
+## آپاچی اسپارک
+* پارتیشنرها در اسپارک چیستند؟ [1](http://stackoverflow.com/questions/17621596/spark-whats-the-best-strategy-for-joining-a-2-tuple-key-rdd-with-single-key-rd)
+* [مفاهیم اولیّهٔ اسپارک](http://horicky.blogspot.de/2015/02/big-data-processing-in-spark.html)
+* به طور پیش‌فرض اسپارک برای هر بلاک فایل در اچ‌دی‌اف‌اس که ۶۴ مگابایت است، یک پارتیشن در نظر می‌گیرد.
+* تعداد پارتیشن‌ها را به اندازهٔ تعداد هسته‌ّای پردازشی بگیرید
+* [معرفی الگوریتم‌های جوین در مپ‌ردیوس](http://www.slideshare.net/shrihari2806/join-algorithms-in-mapreduce)
+* برودکست جوین چیست؟
+* ریپارتیشن جوین چیست؟
+* ردیوس ساید جوین چیست؟
+* مپ‌ساید جوین چیست؟
+* تروجان جوین چیست؟
+* رپلیکیتید جوین چیست؟
+* فرق بین گروپ‌بای‌کی و ردیوس‌بای‌کی چیست؟
