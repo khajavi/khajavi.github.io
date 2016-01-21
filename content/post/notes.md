@@ -15,3 +15,6 @@ title = "یادداشت‌های پراکنده"
 
 ## مثال‌های جاوا
 * [https://github.com/WASdev/sample.javaee7.jms](https://github.com/WASdev/sample.javaee7.jms)
+
+## اسکالا
+* [scaladiagrams](https://github.com/mikeyhu/scaladiagrams) کتابخانه‌ای برای رسم کلاس‌دیاگرام 
