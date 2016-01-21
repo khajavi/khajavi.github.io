@@ -9,3 +9,6 @@ title = "یادداشت‌های پراکنده"
 ## جاوا
 * [موتور قالب فری‌میکر](http://freemarker.incubator.apache.org/)
 * [پلاگین ایمیل برای وی‌رپتور](https://github.com/caelum/vraptor-simplemail)
+
+## MySQL
+گرفتن بک‌آپ از یک پایگاه داده: `mysqldump -u root -ptmppassword sugarcrm > sugarcrm.sql`

@@ -23,6 +23,10 @@
 &lt;li&gt;&lt;a href=&#34;http://freemarker.incubator.apache.org/&#34;&gt;موتور قالب فری‌میکر&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/caelum/vraptor-simplemail&#34;&gt;پلاگین ایمیل برای وی‌رپتور&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id=&#34;mysql:db235fc914867ffea6b540c8732499d5&#34;&gt;MySQL&lt;/h2&gt;
+
+&lt;p&gt;گرفتن بک‌آپ از یک پایگاه داده: &lt;code&gt;mysqldump -u root -ptmppassword sugarcrm &amp;gt; sugarcrm.sql&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
