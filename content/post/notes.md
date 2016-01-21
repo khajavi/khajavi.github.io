@@ -12,3 +12,6 @@ title = "یادداشت‌های پراکنده"
 
 ## MySQL
 گرفتن بک‌آپ از یک پایگاه داده: `mysqldump -u root -ptmppassword sugarcrm > sugarcrm.sql`
+
+## مثال‌های جاوا
+* [https://github.com/WASdev/sample.javaee7.jms](https://github.com/WASdev/sample.javaee7.jms)
