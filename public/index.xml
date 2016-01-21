@@ -6,58 +6,8 @@
     <description>Recent content on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Thu, 21 Jan 2016 07:56:29 +0330</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2015 19:03:48 +0430</lastBuildDate>
     <atom:link href="http://blog.khajavi.ir/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>یادداشت‌های پراکنده</title>
-      <link>http://blog.khajavi.ir/post/notes/</link>
-      <pubDate>Thu, 21 Jan 2016 07:56:29 +0330</pubDate>
-      
-      <guid>http://blog.khajavi.ir/post/notes/</guid>
-      <description>
-
-&lt;h2 id=&#34;جاوا:db235fc914867ffea6b540c8732499d5&#34;&gt;جاوا&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://freemarker.incubator.apache.org/&#34;&gt;موتور قالب فری‌میکر&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/caelum/vraptor-simplemail&#34;&gt;پلاگین ایمیل برای وی‌رپتور&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;mysql:db235fc914867ffea6b540c8732499d5&#34;&gt;MySQL&lt;/h2&gt;
-
-&lt;p&gt;گرفتن بک‌آپ از یک پایگاه داده: &lt;code&gt;mysqldump -u root -ptmppassword sugarcrm &amp;gt; sugarcrm.sql&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;مثال-های-جاوا:db235fc914867ffea6b540c8732499d5&#34;&gt;مثال‌های جاوا&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/WASdev/sample.javaee7.jms&#34;&gt;https://github.com/WASdev/sample.javaee7.jms&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;اسکالا:db235fc914867ffea6b540c8732499d5&#34;&gt;اسکالا&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/mikeyhu/scaladiagrams&#34;&gt;scaladiagrams&lt;/a&gt; کتابخانه‌ای برای رسم کلاس‌دیاگرام&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;آپاچی-اسپارک:db235fc914867ffea6b540c8732499d5&#34;&gt;آپاچی اسپارک&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;پارتیشنرها در اسپارک چیستند؟ &lt;a href=&#34;http://stackoverflow.com/questions/17621596/spark-whats-the-best-strategy-for-joining-a-2-tuple-key-rdd-with-single-key-rd&#34;&gt;1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://horicky.blogspot.de/2015/02/big-data-processing-in-spark.html&#34;&gt;مفاهیم اولیّهٔ اسپارک&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;به طور پیش‌فرض اسپارک برای هر بلاک فایل در اچ‌دی‌اف‌اس که ۶۴ مگابایت است، یک پارتیشن در نظر می‌گیرد.&lt;/li&gt;
-&lt;li&gt;تعداد پارتیشن‌ها را به اندازهٔ تعداد هسته‌ّای پردازشی بگیرید&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.slideshare.net/shrihari2806/join-algorithms-in-mapreduce&#34;&gt;معرفی الگوریتم‌های جوین در مپ‌ردیوس&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;برودکست جوین چیست؟&lt;/li&gt;
-&lt;li&gt;ریپارتیشن جوین چیست؟&lt;/li&gt;
-&lt;li&gt;ردیوس ساید جوین چیست؟&lt;/li&gt;
-&lt;li&gt;مپ‌ساید جوین چیست؟&lt;/li&gt;
-&lt;li&gt;تروجان جوین چیست؟&lt;/li&gt;
-&lt;li&gt;رپلیکیتید جوین چیست؟&lt;/li&gt;
-&lt;li&gt;فرق بین گروپ‌بای‌کی و ردیوس‌بای‌کی چیست؟&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
     <item>
       <title>طرح پیشنهادی پرسش-و-پاسخ</title>
