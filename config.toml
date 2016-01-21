@@ -6,6 +6,7 @@ baseurl = "http://blog.khajavi.ir/"
 canonifyurls = true
 title = "یادداشتهای میلاد خواجوی"
 author = "میلاد"
+theme = "hyde-x"
 
 [indexes]
    category = "categories"
