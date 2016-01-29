@@ -39,3 +39,6 @@ title = "یادداشت‌های پراکنده"
 
 # Go 
 * [Visualizing Concurrency in Go](https://divan.github.io/posts/go_concurrency_visualize/)
+
+# Maven
+* [Bare-bones example of Starting WebLogic Docker Containers from Maven](https://github.com/buttso/weblogic-maven-docker)
