@@ -18,6 +18,7 @@ title = "یادداشت‌های پراکنده"
 
 ## اسکالا
 * [scaladiagrams](https://github.com/mikeyhu/scaladiagrams) کتابخانه‌ای برای رسم کلاس‌دیاگرام 
+* [Implicit Conversions in Scala](http://tomjefferys.blogspot.de/2011/11/implicit-conversions-in-scala.html)
 
 ## آپاچی اسپارک
 * پارتیشنرها در اسپارک چیستند؟ [1](http://stackoverflow.com/questions/17621596/spark-whats-the-best-strategy-for-joining-a-2-tuple-key-rdd-with-single-key-rd)
