@@ -32,3 +32,10 @@ title = "یادداشت‌های پراکنده"
 * تروجان جوین چیست؟
 * رپلیکیتید جوین چیست؟
 * فرق بین گروپ‌بای‌کی و ردیوس‌بای‌کی چیست؟
+
+
+
+
+
+# Go 
+* [Visualizing Concurrency in Go](https://divan.github.io/posts/go_concurrency_visualize/)
