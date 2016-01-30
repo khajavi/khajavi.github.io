@@ -178,3 +178,4 @@ splitedLines: String =
 # Scala
 * [Pattern Matching in Scala distilled](http://scalabound.org/?p=292)
 * [Expecty - Power Assertions for Scala](https://github.com/pniederw/expecty)
+* [Using the Scala Option, Some, and None idiom (instead of Java null)](http://alvinalexander.com/scala/using-scala-option-some-none-idiom-function-java-null)
