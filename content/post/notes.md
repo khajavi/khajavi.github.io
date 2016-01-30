@@ -161,6 +161,8 @@ splitedLines: String =
 * مثال های دکتر ژن‌هی در مورد اسپارک [+](http://homepage.cs.latrobe.edu.au/zhe/ZhenHeSparkRDDAPIExamples.html)
 * پیاده‌سازی فود ریکامندیشن با اسپارک [+](https://chimpler.wordpress.com/2014/07/22/building-a-food-recommendation-engine-with-spark-mllib-and-play/)
 * [مثالی برای اتصال اسپارک به پایگاه دادهٔ رابطه‌ای MySQL](https://github.com/sujee81/SparkApps/blob/master/spark-load-from-db/src/main/java/com/sparkexpert/Main.java)
+* [Loading database data into Spark using Data Sources API](http://www.sparkexpert.com/2015/03/28/loading-database-data-into-spark-using-data-sources-api/)
+* [Save apache spark dataframe to database](http://www.sparkexpert.com/2015/04/17/save-apache-spark-dataframe-to-database/)
 
 ## هوش مصنوعی
 * اسلایدی در مورد کلاسترینگ در یادگیری ماشین [+](http://ampcamp.berkeley.edu/wp-content/uploads/2012/06/tamara-broderick-amp-camp-2012-algorithms-part-2-kmeans.pdf)
