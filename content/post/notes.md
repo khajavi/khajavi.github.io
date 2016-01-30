@@ -160,6 +160,7 @@ splitedLines: String =
 * چطور اختلاف مقادیر رو با rdd حساب کنیم؟ [+](http://stackoverflow.com/questions/34911994/spark-rdd-set-difference)
 * مثال های دکتر ژن‌هی در مورد اسپارک [+](http://homepage.cs.latrobe.edu.au/zhe/ZhenHeSparkRDDAPIExamples.html)
 * پیاده‌سازی فود ریکامندیشن با اسپارک [+](https://chimpler.wordpress.com/2014/07/22/building-a-food-recommendation-engine-with-spark-mllib-and-play/)
+* [مثالی برای اتصال اسپارک به پایگاه دادهٔ رابطه‌ای MySQL](https://github.com/sujee81/SparkApps/blob/master/spark-load-from-db/src/main/java/com/sparkexpert/Main.java)
 
 ## هوش مصنوعی
 * اسلایدی در مورد کلاسترینگ در یادگیری ماشین [+](http://ampcamp.berkeley.edu/wp-content/uploads/2012/06/tamara-broderick-amp-camp-2012-algorithms-part-2-kmeans.pdf)
