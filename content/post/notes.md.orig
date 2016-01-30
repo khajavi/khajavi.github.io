@@ -33,6 +33,7 @@ title = "یادداشت‌های پراکنده"
 * تروجان جوین چیست؟
 * رپلیکیتید جوین چیست؟
 * فرق بین گروپ‌بای‌کی و ردیوس‌بای‌کی چیست؟
+<<<<<<< HEAD
 * کتابی از دیتا بریک برای اسپارک [1](https://www.gitbook.com/book/databricks/databricks-spark-knowledge-base/reviews)
 * دو تا مطلب در مورد نحوهٔ تیون کردن اسپارک از کلودرا [۱](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-1/) [۲](http://blog.cloudera.com/blog/2015/03/how-to-tune-your-apache-spark-jobs-part-2/)
 * دو تا کتاب از اوریلی در مورد اسپارک
@@ -163,6 +164,9 @@ splitedLines: String =
 
 ## هوش مصنوعی
 * اسلایدی در مورد کلاسترینگ در یادگیری ماشین [+](http://ampcamp.berkeley.edu/wp-content/uploads/2012/06/tamara-broderick-amp-camp-2012-algorithms-part-2-kmeans.pdf)
+=======
+
+
 
 
 
@@ -171,3 +175,4 @@ splitedLines: String =
 
 # Maven
 * [Bare-bones example of Starting WebLogic Docker Containers from Maven](https://github.com/buttso/weblogic-maven-docker)
+>>>>>>> f09afdf6da104d5c368144f6dcc18a8a7f0ef1cd
