@@ -174,3 +174,7 @@ splitedLines: String =
 
 # Maven
 * [Bare-bones example of Starting WebLogic Docker Containers from Maven](https://github.com/buttso/weblogic-maven-docker)
+
+# Scala
+* [Pattern Matching in Scala distilled](http://scalabound.org/?p=292)
+* [Expecty - Power Assertions for Scala](https://github.com/pniederw/expecty)
