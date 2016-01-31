@@ -163,6 +163,11 @@ splitedLines: String =
 * [مثالی برای اتصال اسپارک به پایگاه دادهٔ رابطه‌ای MySQL](https://github.com/sujee81/SparkApps/blob/master/spark-load-from-db/src/main/java/com/sparkexpert/Main.java)
 * [Loading database data into Spark using Data Sources API](http://www.sparkexpert.com/2015/03/28/loading-database-data-into-spark-using-data-sources-api/)
 * [Save apache spark dataframe to database](http://www.sparkexpert.com/2015/04/17/save-apache-spark-dataframe-to-database/)
+* [How to define schema for custom type in Spark SQL?](http://stackoverflow.com/questions/32440461/how-to-define-schema-for-custom-type-in-spark-sql)
+* [Use Sbt Console as Spark-Shell](https://bzhangusc.wordpress.com/2015/11/20/use-sbt-console-as-spark-shell/)
+
+## blogs 
+* [Big Data Analytics with Spark](https://bzhangusc.wordpress.com/)
 
 ## هوش مصنوعی
 * اسلایدی در مورد کلاسترینگ در یادگیری ماشین [+](http://ampcamp.berkeley.edu/wp-content/uploads/2012/06/tamara-broderick-amp-camp-2012-algorithms-part-2-kmeans.pdf)
@@ -179,3 +184,4 @@ splitedLines: String =
 * [Pattern Matching in Scala distilled](http://scalabound.org/?p=292)
 * [Expecty - Power Assertions for Scala](https://github.com/pniederw/expecty)
 * [Using the Scala Option, Some, and None idiom (instead of Java null)](http://alvinalexander.com/scala/using-scala-option-some-none-idiom-function-java-null)
+* [Scala Enumerations](http://underscore.io/blog/posts/2014/09/03/enumerations.html)
