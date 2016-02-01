@@ -1,7 +1,7 @@
 +++
 date = "2016-01-21T07:56:29+03:30"
 draft = true
-title = "یادداشت‌های پراکنده"
+title = "notes"
 
 +++
 
@@ -185,3 +185,4 @@ splitedLines: String =
 * [Expecty - Power Assertions for Scala](https://github.com/pniederw/expecty)
 * [Using the Scala Option, Some, and None idiom (instead of Java null)](http://alvinalexander.com/scala/using-scala-option-some-none-idiom-function-java-null)
 * [Scala Enumerations](http://underscore.io/blog/posts/2014/09/03/enumerations.html)
+* [Scala partial functions (without a PhD)](http://blog.bruchez.name/2011/10/scala-partial-functions-without-phd.html)
