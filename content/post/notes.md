@@ -186,3 +186,4 @@ splitedLines: String =
 * [Using the Scala Option, Some, and None idiom (instead of Java null)](http://alvinalexander.com/scala/using-scala-option-some-none-idiom-function-java-null)
 * [Scala Enumerations](http://underscore.io/blog/posts/2014/09/03/enumerations.html)
 * [Scala partial functions (without a PhD)](http://blog.bruchez.name/2011/10/scala-partial-functions-without-phd.html)
+* [How to create and use partial functions in Scala](http://alvinalexander.com/scala/how-to-define-use-partial-functions-in-scala-syntax-examples)
