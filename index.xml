@@ -6,8 +6,39 @@
     <description>Recent content on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Tue, 06 Mar 2018 11:26:43 +0330</lastBuildDate>
+    <lastBuildDate>Sat, 10 Aug 2019 19:29:06 +0430</lastBuildDate>
     <atom:link href="http://blog.khajavi.ir/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>scala contramap</title>
+      <link>http://blog.khajavi.ir/post/scala-contramap/</link>
+      <pubDate>Sat, 10 Aug 2019 19:29:06 +0430</pubDate>
+      
+      <guid>http://blog.khajavi.ir/post/scala-contramap/</guid>
+      <description>&lt;p&gt;Contramap function have the following definition:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def contramap[A, B](fa: F[A])(f: B =&amp;gt; A): F[B]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example &lt;code&gt;scala.math.Ordering&lt;/code&gt; have &lt;code&gt;by&lt;/code&gt; function that is contramap, we can create Complicated orderings by use of Simple Orderings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def by[T, S](f: T =&amp;gt; S)(implicit ord: Ordering[S]): Ordering[T]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;import cats._
+
+import cats.implicits._
+
+case class Money(amount: Int)
+
+import scala.math.Ordered._
+
+implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
+
+Money(300) &amp;lt; Money(200)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>معرّفی شمابگو</title>

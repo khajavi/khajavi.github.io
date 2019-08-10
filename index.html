@@ -75,6 +75,42 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="http://blog.khajavi.ir/post/scala-contramap/">scala contramap</a>
+      </h1>
+      <span class="post-date">Aug 10, 2019 &middot; 1 minute read
+      
+      <br/>
+      
+      </span>
+      
+      <p>Contramap function have the following definition:</p>
+
+<pre><code>def contramap[A, B](fa: F[A])(f: B =&gt; A): F[B]
+</code></pre>
+
+<p>For example <code>scala.math.Ordering</code> have <code>by</code> function that is contramap, we can create Complicated orderings by use of Simple Orderings.</p>
+
+<pre><code class="language-scala">def by[T, S](f: T =&gt; S)(implicit ord: Ordering[S]): Ordering[T]
+</code></pre>
+
+<pre><code class="language-scala">import cats._
+
+import cats.implicits._
+
+case class Money(amount: Int)
+
+import scala.math.Ordered._
+
+implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
+
+Money(300) &lt; Money(200)
+</code></pre>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="http://blog.khajavi.ir/post/shomabegoo-introduction/">معرّفی شمابگو</a>
       </h1>
       <span class="post-date">Mar 6, 2018 &middot; 2 minute read

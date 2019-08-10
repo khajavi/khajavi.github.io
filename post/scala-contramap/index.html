@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Posts &middot; </title>
+  <title>scala contramap &middot; </title>
 
   
   <link rel="stylesheet" href="http://blog.khajavi.ir/css/poole.css">
@@ -27,7 +27,7 @@
   
   
   
-  <link href="http://blog.khajavi.ir/post/index.xml" rel="alternate" type="application/rss+xml" title="یادداشتهای میلاد خواجوی &middot; " />
+  
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -69,36 +69,43 @@
 
 
 <div class="content container">
-  <ul class="posts">
-  
-    <li><a href="http://blog.khajavi.ir/post/scala-contramap/">scala contramap</a>
+  <div class="post">
+    <h1 class="post-title">scala contramap</h1>
+    <span class="post-date">Aug 10, 2019 &middot; 1 minute read
     
-    &middot;
-    
-    </span>
-    &middot; <time>Aug 10, 2019</time></li>
-  
-    <li><a href="http://blog.khajavi.ir/post/shomabegoo-introduction/">معرّفی شمابگو</a>
-    
-    &middot;
+    <br/>
     
     </span>
-    &middot; <time>Mar 6, 2018</time></li>
+    <p>Contramap function have the following definition:</p>
+
+<pre><code>def contramap[A, B](fa: F[A])(f: B =&gt; A): F[B]
+</code></pre>
+
+<p>For example <code>scala.math.Ordering</code> have <code>by</code> function that is contramap, we can create Complicated orderings by use of Simple Orderings.</p>
+
+<pre><code class="language-scala">def by[T, S](f: T =&gt; S)(implicit ord: Ordering[S]): Ordering[T]
+</code></pre>
+
+<pre><code class="language-scala">import cats._
+
+import cats.implicits._
+
+case class Money(amount: Int)
+
+import scala.math.Ordered._
+
+implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
+
+Money(300) &lt; Money(200)
+</code></pre>
+
+  </div>
   
-    <li><a href="http://blog.khajavi.ir/post/question-and-answer/">طرح پیشنهادی پرسش-و-پاسخ</a>
-    </span>
-    &middot; <time>May 6, 2015</time></li>
-  
-    <li><a href="http://blog.khajavi.ir/post/quran-project-proposal/">طرح پیشنهادی نرم‌افزار شرح واژگان قرآن</a>
-    </span>
-    &middot; <time>May 2, 2015</time></li>
-  
-    <li><a href="http://blog.khajavi.ir/post/tanzil/">معرّفی پروژهٔ تنزیل</a>
-    </span>
-    &middot; <time>Nov 25, 2011</time></li>
-  
-  </ul>
 </div>
+
+
+
+
 
 </body>
 </html>
