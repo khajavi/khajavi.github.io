@@ -93,11 +93,9 @@
 <pre><code class="language-scala">def by[T, S](f: T =&gt; S)(implicit ord: Ordering[S]): Ordering[T]
 </code></pre>
 
-<pre><code class="language-scala">import cats._
+<p>Create Ordering for type Money with <code>by</code> contramap</p>
 
-import cats.implicits._
-
-case class Money(amount: Int)
+<pre><code class="language-scala">case class Money(amount: Int)
 
 import scala.math.Ordered._
 
