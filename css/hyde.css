@@ -31,8 +31,18 @@
  * Update the foundational and global aspects of the page.
  */
 
+@font-face {
+  font-family: Gandom;
+  src: url('../font/Gandom.eot');
+  src: url('../font/Gandom.eot?#iefix') format('embedded-opentype'),
+       url('../font/Gandom.woff2') format('woff2'),
+       url('../font/Gandom.woff') format('woff'),
+       url('../font/Gandom.ttf') format('truetype');
+  font-weight: normal;
+}
+
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Gandom", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48em) {
   html {
