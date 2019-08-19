@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="http://blog.khajavi.ir/css/poole-overrides.css">
   <link rel="stylesheet" href="http://blog.khajavi.ir/css/hyde-overrides.css">
   <link rel="stylesheet" href="http://blog.khajavi.ir/css/hyde-x.css">
-  
+  <link rel="stylesheet" href="http://blog.khajavi.ir/css/highlight/hybrid.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
@@ -34,7 +34,7 @@
   <meta name="keywords" content="">
   
 </head>
-<body class="theme-base-08 layout-reverse">
+<body class="theme-base-08">
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
@@ -87,7 +87,7 @@
       
       <p>Contramap function have the following definition:</p>
 
-<pre><code>def contramap[A, B](fa: F[A])(f: B =&gt; A): F[B]
+<pre><code class="language-scala">def contramap[A, B](fa: F[A])(f: B =&gt; A): F[B]
 </code></pre>
 
 <p>For example <code>scala.math.Ordering</code> have <code>by</code> function that is contramap, we can create Complicated orderings by use of Simple Orderings.</p>
@@ -293,7 +293,8 @@ Money(300) &lt; Money(200)
 </div>
 
 
-
+<script src="http://blog.khajavi.ir/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
 

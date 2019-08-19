@@ -16,7 +16,7 @@
       <guid>http://blog.khajavi.ir/post/scala-contramap/</guid>
       <description>&lt;p&gt;Contramap function have the following definition:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;def contramap[A, B](fa: F[A])(f: B =&amp;gt; A): F[B]
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def contramap[A, B](fa: F[A])(f: B =&amp;gt; A): F[B]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;For example &lt;code&gt;scala.math.Ordering&lt;/code&gt; have &lt;code&gt;by&lt;/code&gt; function that is contramap, we can create Complicated orderings by use of Simple Orderings.&lt;/p&gt;
