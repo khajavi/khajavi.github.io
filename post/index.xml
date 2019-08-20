@@ -6,8 +6,84 @@
     <description>Recent content in Post-rsses on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Sat, 10 Aug 2019 19:29:06 +0430</lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 13:48:13 +0430</lastBuildDate>
     <atom:link href="http://blog.khajavi.ir/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Scala Intramap</title>
+      <link>http://blog.khajavi.ir/post/scala-intramap/</link>
+      <pubDate>Tue, 20 Aug 2019 13:48:13 +0430</pubDate>
+      
+      <guid>http://blog.khajavi.ir/post/scala-intramap/</guid>
+      <description>&lt;p&gt;Intramap have following definition:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def imap[A, B](fa: F[A])(f: A =&amp;gt; B)(g: B =&amp;gt; A): F[B]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So when you have Funtor[A] and you want to create new Functor[B] which is invariant with Functor[A] you can use &lt;code&gt;imap&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;In following example, You I&amp;rsquo;ve wrote Codec for &lt;code&gt;Person&lt;/code&gt; type, by using &lt;code&gt;String&lt;/code&gt; Codec.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;trait Codec[A] {
+  self =&amp;gt;
+  def encode(value: A): String
+
+  def decode(value: String): A
+
+  def imap[B](dec: A =&amp;gt; B, enc: B =&amp;gt; A): Codec[B] = new Codec[B] {
+    override def encode(value: B): String =
+      self.encode(enc(value))
+
+    override def decode(value: String): B =
+      dec(self.decode(value))
+  }
+}
+
+def encode[A](value: A)(implicit c: Codec[A]): String = c.encode(value)
+
+def decode[A](value: String)(implicit c: Codec[A]): A = c.decode(value)
+
+
+object CodecImplicits {
+
+
+  implicit val stringCodec: Codec[String] = new Codec[String] {
+    override def encode(value: String): String = value
+
+    override def decode(value: String): String = value
+  }
+
+  implicit val intCodec: Codec[Int] = stringCodec.imap(
+    _.toInt, _.toString
+  )
+}
+
+import CodecImplicits._
+
+case class Person(name: String, age: Int)
+
+implicit val personCodec: Codec[Person] = stringCodec.imap[Person](
+  str =&amp;gt; {
+    val lines = str.split(&#39;,&#39;)
+    Person(decode[String](lines(0)), decode[Int](lines(1)))
+  },
+  person =&amp;gt; s&amp;quot;${person.name},${person.age}&amp;quot;
+)
+
+val ali: String = encode[Person](Person(&amp;quot;Ali&amp;quot;, 25))
+val mohammad: Person = decode[Person](&amp;quot;Mohammad,23&amp;quot;)
+
+println(ali)
+println(mohammad)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Ali,25
+Person(Mohammad,23)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Scala Contramap</title>

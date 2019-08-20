@@ -77,6 +77,89 @@
       <div class="post">
       
       <h1 class="post-title">
+        <a href="http://blog.khajavi.ir/post/scala-intramap/">Scala Intramap</a>
+      </h1>
+      <span class="post-date">Aug 20, 2019 &middot; 1 minute read
+      
+      <br/>
+      
+      </span>
+      
+      <p>Intramap have following definition:</p>
+
+<pre><code class="language-scala">def imap[A, B](fa: F[A])(f: A =&gt; B)(g: B =&gt; A): F[B]
+</code></pre>
+
+<p>So when you have Funtor[A] and you want to create new Functor[B] which is invariant with Functor[A] you can use <code>imap</code> method.</p>
+
+<p>In following example, You I&rsquo;ve wrote Codec for <code>Person</code> type, by using <code>String</code> Codec.</p>
+
+<pre><code class="language-scala">trait Codec[A] {
+  self =&gt;
+  def encode(value: A): String
+
+  def decode(value: String): A
+
+  def imap[B](dec: A =&gt; B, enc: B =&gt; A): Codec[B] = new Codec[B] {
+    override def encode(value: B): String =
+      self.encode(enc(value))
+
+    override def decode(value: String): B =
+      dec(self.decode(value))
+  }
+}
+
+def encode[A](value: A)(implicit c: Codec[A]): String = c.encode(value)
+
+def decode[A](value: String)(implicit c: Codec[A]): A = c.decode(value)
+
+
+object CodecImplicits {
+
+
+  implicit val stringCodec: Codec[String] = new Codec[String] {
+    override def encode(value: String): String = value
+
+    override def decode(value: String): String = value
+  }
+
+  implicit val intCodec: Codec[Int] = stringCodec.imap(
+    _.toInt, _.toString
+  )
+}
+
+import CodecImplicits._
+
+case class Person(name: String, age: Int)
+
+implicit val personCodec: Codec[Person] = stringCodec.imap[Person](
+  str =&gt; {
+    val lines = str.split(',')
+    Person(decode[String](lines(0)), decode[Int](lines(1)))
+  },
+  person =&gt; s&quot;${person.name},${person.age}&quot;
+)
+
+val ali: String = encode[Person](Person(&quot;Ali&quot;, 25))
+val mohammad: Person = decode[Person](&quot;Mohammad,23&quot;)
+
+println(ali)
+println(mohammad)
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>Ali,25
+Person(Mohammad,23)
+</code></pre>
+
+      
+    </div>
+    
+      
+      <div class="post">
+      
+      <h1 class="post-title">
         <a href="http://blog.khajavi.ir/post/scala-contramap/">Scala Contramap</a>
       </h1>
       <span class="post-date">Aug 10, 2019 &middot; 1 minute read

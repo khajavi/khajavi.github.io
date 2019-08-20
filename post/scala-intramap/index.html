@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>Posts &middot; </title>
+  <title>Scala Intramap &middot; </title>
 
   
   <link rel="stylesheet" href="http://blog.khajavi.ir/css/poole.css">
@@ -27,7 +27,7 @@
   
   
   
-  <link href="http://blog.khajavi.ir/post/index.xml" rel="alternate" type="application/rss+xml" title="یادداشتهای میلاد خواجوی &middot; " />
+  
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -69,43 +69,90 @@
 
 
 <div class="content container">
-  <ul class="posts">
-  
-    <li><a href="http://blog.khajavi.ir/post/scala-intramap/">Scala Intramap</a>
     
-    &middot;
+    <div class="post">
+        
+    <h1 class="post-title">Scala Intramap</h1>
+    <span class="post-date">Aug 20, 2019 &middot; 1 minute read
     
-    </span>
-    &middot; <time>Aug 20, 2019</time></li>
-  
-    <li><a href="http://blog.khajavi.ir/post/scala-contramap/">Scala Contramap</a>
-    
-    &middot;
+    <br/>
     
     </span>
-    &middot; <time>Aug 10, 2019</time></li>
+    <p>Intramap have following definition:</p>
+
+<pre><code class="language-scala">def imap[A, B](fa: F[A])(f: A =&gt; B)(g: B =&gt; A): F[B]
+</code></pre>
+
+<p>So when you have Funtor[A] and you want to create new Functor[B] which is invariant with Functor[A] you can use <code>imap</code> method.</p>
+
+<p>In following example, You I&rsquo;ve wrote Codec for <code>Person</code> type, by using <code>String</code> Codec.</p>
+
+<pre><code class="language-scala">trait Codec[A] {
+  self =&gt;
+  def encode(value: A): String
+
+  def decode(value: String): A
+
+  def imap[B](dec: A =&gt; B, enc: B =&gt; A): Codec[B] = new Codec[B] {
+    override def encode(value: B): String =
+      self.encode(enc(value))
+
+    override def decode(value: String): B =
+      dec(self.decode(value))
+  }
+}
+
+def encode[A](value: A)(implicit c: Codec[A]): String = c.encode(value)
+
+def decode[A](value: String)(implicit c: Codec[A]): A = c.decode(value)
+
+
+object CodecImplicits {
+
+
+  implicit val stringCodec: Codec[String] = new Codec[String] {
+    override def encode(value: String): String = value
+
+    override def decode(value: String): String = value
+  }
+
+  implicit val intCodec: Codec[Int] = stringCodec.imap(
+    _.toInt, _.toString
+  )
+}
+
+import CodecImplicits._
+
+case class Person(name: String, age: Int)
+
+implicit val personCodec: Codec[Person] = stringCodec.imap[Person](
+  str =&gt; {
+    val lines = str.split(',')
+    Person(decode[String](lines(0)), decode[Int](lines(1)))
+  },
+  person =&gt; s&quot;${person.name},${person.age}&quot;
+)
+
+val ali: String = encode[Person](Person(&quot;Ali&quot;, 25))
+val mohammad: Person = decode[Person](&quot;Mohammad,23&quot;)
+
+println(ali)
+println(mohammad)
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>Ali,25
+Person(Mohammad,23)
+</code></pre>
+
+  </div>
   
-    <li><a href="http://blog.khajavi.ir/post/shomabegoo-introduction/">معرّفی شمابگو</a>
-    
-    &middot;
-    
-    </span>
-    &middot; <time>Mar 6, 2018</time></li>
-  
-    <li><a href="http://blog.khajavi.ir/post/question-and-answer/">طرح پیشنهادی پرسش-و-پاسخ</a>
-    </span>
-    &middot; <time>May 6, 2015</time></li>
-  
-    <li><a href="http://blog.khajavi.ir/post/quran-project-proposal/">طرح پیشنهادی نرم‌افزار شرح واژگان قرآن</a>
-    </span>
-    &middot; <time>May 2, 2015</time></li>
-  
-    <li><a href="http://blog.khajavi.ir/post/tanzil/">معرّفی پروژهٔ تنزیل</a>
-    </span>
-    &middot; <time>Nov 25, 2011</time></li>
-  
-  </ul>
 </div>
+
+
+
+
 <script src="http://blog.khajavi.ir/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
