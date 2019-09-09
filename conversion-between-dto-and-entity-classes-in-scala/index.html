@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>404 Page not found &middot; </title>
+  <title>Conversion Between DTO and Entity Classes in Scala &middot; </title>
 
   
   <link rel="stylesheet" href="http://blog.khajavi.ir/css/poole.css">
@@ -72,9 +72,13 @@
 
 <div class="content container">
   <div class="post">
-    <h1>404 Not Found</h1>
-    <p>What you're looking for isn't here, sorry!</p>
-    <p><a href="http://blog.khajavi.ir/">&larr; Click here to go back home</a></p>
+    <h1 class="post-title">Conversion Between DTO and Entity Classes in Scala</h1>
+    <p>When you practicing DDD (Domain-Driven-Design), you need to create different bounded countexts, for example when you receive DTO object <code>PersonDTO</code>, It should be mapped to <code>PersonEntity</code>. This conversion, have lots of repetitive works to copy fields of one object to another.</p>
+
+<p>In scala there is type-safa data transoformer <a href="https://github.com/scalalandio/chimney">chimney</a> which can do it for you with macros and providing simple dsl for it.</p>
+
+<p><a href="https://github.com/bfil/scala-automapper">Scala-Automapper</a> is another library which is similar to <code>chimney</code> but when you have some difference in fields type, you can&rsquo;t do it, easily like <code>chimney</code></p>
+
   </div>
 </div>
 <script src="http://blog.khajavi.ir/js/highlight.pack.js"></script>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title>404 Page not found &middot; </title>
+  <title>Scala Contramap &middot; </title>
 
   
   <link rel="stylesheet" href="http://blog.khajavi.ir/css/poole.css">
@@ -72,9 +72,28 @@
 
 <div class="content container">
   <div class="post">
-    <h1>404 Not Found</h1>
-    <p>What you're looking for isn't here, sorry!</p>
-    <p><a href="http://blog.khajavi.ir/">&larr; Click here to go back home</a></p>
+    <h1 class="post-title">Scala Contramap</h1>
+    <p>Contramap function have the following definition:</p>
+
+<pre><code class="language-scala">def contramap[A, B](fa: F[A])(f: B =&gt; A): F[B]
+</code></pre>
+
+<p>For example <code>scala.math.Ordering</code> have <code>by</code> function that is contramap, we can create Complicated orderings by use of Simple Orderings.</p>
+
+<pre><code class="language-scala">def by[T, S](f: T =&gt; S)(implicit ord: Ordering[S]): Ordering[T]
+</code></pre>
+
+<p>Create Ordering for type Money with <code>by</code> contramap</p>
+
+<pre><code class="language-scala">case class Money(amount: Int)
+
+import scala.math.Ordered._
+
+implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
+
+Money(300) &lt; Money(200)
+</code></pre>
+
   </div>
 </div>
 <script src="http://blog.khajavi.ir/js/highlight.pack.js"></script>
