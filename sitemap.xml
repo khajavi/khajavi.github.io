@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>http://blog.khajavi.ir/conversion-between-dto-and-entity-classes-in-scala/</loc>
-    <lastmod>2019-09-09T08:07:31+04:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.khajavi.ir/tags/english/</loc>
-    <lastmod>2019-09-09T08:07:31+04:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.khajavi.ir/tags/</loc>
-    <lastmod>2019-09-09T08:07:31+04:30</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
     <loc>http://blog.khajavi.ir/</loc>
+    <lastmod>2019-10-06T01:06:51+03:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.khajavi.ir/post/knapsack-dp/</loc>
+    <lastmod>2019-10-06T01:06:51+03:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.khajavi.ir/conversion-between-dto-and-entity-classes-in-scala/</loc>
     <lastmod>2019-09-09T08:07:31+04:30</lastmod>
   </url>
   
@@ -30,11 +24,6 @@
   <url>
     <loc>http://blog.khajavi.ir/scala-contramap/</loc>
     <lastmod>2019-08-10T19:29:06+04:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.khajavi.ir/tags/persian/</loc>
-    <lastmod>2018-03-06T11:26:43+03:30</lastmod>
   </url>
   
   <url>
@@ -55,10 +44,6 @@
   <url>
     <loc>http://blog.khajavi.ir/tanzil/</loc>
     <lastmod>2011-11-25T06:56:18+04:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://blog.khajavi.ir/categories/</loc>
   </url>
   
 </urlset>

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>English on یادداشتهای میلاد خواجوی</title>
-    <link>http://blog.khajavi.ir/tags/english/</link>
-    <description>Recent content in English on یادداشتهای میلاد خواجوی</description>
+    <title>یادداشتهای میلاد خواجوی</title>
+    <link>http://blog.khajavi.ir/tags/english/index.xml</link>
+    <description>Recent content on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Mon, 09 Sep 2019 08:07:31 +0430</lastBuildDate>
-    
-	<atom:link href="http://blog.khajavi.ir/tags/english/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.khajavi.ir/tags/english/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Conversion Between DTO and Entity Classes in Scala</title>
@@ -17,9 +14,12 @@
       <pubDate>Mon, 09 Sep 2019 08:07:31 +0430</pubDate>
       
       <guid>http://blog.khajavi.ir/conversion-between-dto-and-entity-classes-in-scala/</guid>
-      <description>When you practicing DDD (Domain-Driven-Design), you need to create different bounded countexts, for example when you receive DTO object PersonDTO, It should be mapped to PersonEntity. This conversion, have lots of repetitive works to copy fields of one object to another.
-In scala there is type-safa data transoformer chimney which can do it for you with macros and providing simple dsl for it.
-Scala-Automapper is another library which is similar to chimney but when you have some difference in fields type, you can&amp;rsquo;t do it, easily like chimney</description>
+      <description>&lt;p&gt;When you practicing DDD (Domain-Driven-Design), you need to create different bounded countexts, for example when you receive DTO object &lt;code&gt;PersonDTO&lt;/code&gt;, It should be mapped to &lt;code&gt;PersonEntity&lt;/code&gt;. This conversion, have lots of repetitive works to copy fields of one object to another.&lt;/p&gt;
+
+&lt;p&gt;In scala there is type-safa data transoformer &lt;a href=&#34;https://github.com/scalalandio/chimney&#34;&gt;chimney&lt;/a&gt; which can do it for you with macros and providing simple dsl for it.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/bfil/scala-automapper&#34;&gt;Scala-Automapper&lt;/a&gt; is another library which is similar to &lt;code&gt;chimney&lt;/code&gt; but when you have some difference in fields type, you can&amp;rsquo;t do it, easily like &lt;code&gt;chimney&lt;/code&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -28,10 +28,27 @@ Scala-Automapper is another library which is similar to chimney but when you hav
       <pubDate>Sat, 10 Aug 2019 19:29:06 +0430</pubDate>
       
       <guid>http://blog.khajavi.ir/scala-contramap/</guid>
-      <description>Contramap function have the following definition:
-def contramap[A, B](fa: F[A])(f: B =&amp;gt; A): F[B]  For example scala.math.Ordering have by function that is contramap, we can create Complicated orderings by use of Simple Orderings.
-def by[T, S](f: T =&amp;gt; S)(implicit ord: Ordering[S]): Ordering[T]  Create Ordering for type Money with by contramap
-case class Money(amount: Int) import scala.math.Ordered._ implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount) Money(300) &amp;lt; Money(200)  </description>
+      <description>&lt;p&gt;Contramap function have the following definition:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def contramap[A, B](fa: F[A])(f: B =&amp;gt; A): F[B]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example &lt;code&gt;scala.math.Ordering&lt;/code&gt; have &lt;code&gt;by&lt;/code&gt; function that is contramap, we can create Complicated orderings by use of Simple Orderings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def by[T, S](f: T =&amp;gt; S)(implicit ord: Ordering[S]): Ordering[T]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Create Ordering for type Money with &lt;code&gt;by&lt;/code&gt; contramap&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;case class Money(amount: Int)
+
+import scala.math.Ordered._
+
+implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
+
+Money(300) &amp;lt; Money(200)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>
