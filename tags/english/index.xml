@@ -10,10 +10,10 @@
     
     <item>
       <title>Conversion Between DTO and Entity Classes in Scala</title>
-      <link>http://blog.khajavi.ir/conversion-between-dto-and-entity-classes-in-scala/</link>
+      <link>http://blog.khajavi.ir/post/conversion-between-dto-and-entity-classes-in-scala/</link>
       <pubDate>Mon, 09 Sep 2019 08:07:31 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/conversion-between-dto-and-entity-classes-in-scala/</guid>
+      <guid>http://blog.khajavi.ir/post/conversion-between-dto-and-entity-classes-in-scala/</guid>
       <description>&lt;p&gt;When you practicing DDD (Domain-Driven-Design), you need to create different bounded countexts, for example when you receive DTO object &lt;code&gt;PersonDTO&lt;/code&gt;, It should be mapped to &lt;code&gt;PersonEntity&lt;/code&gt;. This conversion, have lots of repetitive works to copy fields of one object to another.&lt;/p&gt;
 
 &lt;p&gt;In scala there is type-safa data transoformer &lt;a href=&#34;https://github.com/scalalandio/chimney&#34;&gt;chimney&lt;/a&gt; which can do it for you with macros and providing simple dsl for it.&lt;/p&gt;
@@ -24,10 +24,10 @@
     
     <item>
       <title>Scala Contramap</title>
-      <link>http://blog.khajavi.ir/scala-contramap/</link>
+      <link>http://blog.khajavi.ir/post/scala-contramap/</link>
       <pubDate>Sat, 10 Aug 2019 19:29:06 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/scala-contramap/</guid>
+      <guid>http://blog.khajavi.ir/post/scala-contramap/</guid>
       <description>&lt;p&gt;Contramap function have the following definition:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def contramap[A, B](fa: F[A])(f: B =&amp;gt; A): F[B]

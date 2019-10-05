@@ -11,10 +11,10 @@
     
     <item>
       <title>Conversion Between DTO and Entity Classes in Scala</title>
-      <link>http://blog.khajavi.ir/conversion-between-dto-and-entity-classes-in-scala/</link>
+      <link>http://blog.khajavi.ir/post/conversion-between-dto-and-entity-classes-in-scala/</link>
       <pubDate>Mon, 09 Sep 2019 08:07:31 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/conversion-between-dto-and-entity-classes-in-scala/</guid>
+      <guid>http://blog.khajavi.ir/post/conversion-between-dto-and-entity-classes-in-scala/</guid>
       <description>&lt;p&gt;When you practicing DDD (Domain-Driven-Design), you need to create different bounded countexts, for example when you receive DTO object &lt;code&gt;PersonDTO&lt;/code&gt;, It should be mapped to &lt;code&gt;PersonEntity&lt;/code&gt;. This conversion, have lots of repetitive works to copy fields of one object to another.&lt;/p&gt;
 
 &lt;p&gt;In scala there is type-safa data transoformer &lt;a href=&#34;https://github.com/scalalandio/chimney&#34;&gt;chimney&lt;/a&gt; which can do it for you with macros and providing simple dsl for it.&lt;/p&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Scala Intramap</title>
-      <link>http://blog.khajavi.ir/scala-intramap/</link>
+      <link>http://blog.khajavi.ir/post/scala-intramap/</link>
       <pubDate>Tue, 20 Aug 2019 13:48:13 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/scala-intramap/</guid>
+      <guid>http://blog.khajavi.ir/post/scala-intramap/</guid>
       <description>&lt;p&gt;Intramap have following definition:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def imap[A, B](fa: F[A])(f: A =&amp;gt; B)(g: B =&amp;gt; A): F[B]
@@ -101,10 +101,10 @@ Person(Mohammad,23)
     
     <item>
       <title>Scala Contramap</title>
-      <link>http://blog.khajavi.ir/scala-contramap/</link>
+      <link>http://blog.khajavi.ir/post/scala-contramap/</link>
       <pubDate>Sat, 10 Aug 2019 19:29:06 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/scala-contramap/</guid>
+      <guid>http://blog.khajavi.ir/post/scala-contramap/</guid>
       <description>&lt;p&gt;Contramap function have the following definition:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;def contramap[A, B](fa: F[A])(f: B =&amp;gt; A): F[B]
@@ -130,10 +130,10 @@ Money(300) &amp;lt; Money(200)
     
     <item>
       <title>معرّفی شمابگو</title>
-      <link>http://blog.khajavi.ir/shomabegoo-introduction/</link>
+      <link>http://blog.khajavi.ir/post/shomabegoo-introduction/</link>
       <pubDate>Tue, 06 Mar 2018 11:26:43 +0330</pubDate>
       
-      <guid>http://blog.khajavi.ir/shomabegoo-introduction/</guid>
+      <guid>http://blog.khajavi.ir/post/shomabegoo-introduction/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://shomabegoo.com&#34;&gt;شمابگو&lt;/a&gt;، یک شبکهٔ اجتماعی پرسش و پاسخ است.&lt;/p&gt;
 
 &lt;p&gt;در شمابگو&lt;/p&gt;
@@ -153,10 +153,10 @@ Money(300) &amp;lt; Money(200)
     
     <item>
       <title>طرح پیشنهادی پرسش-و-پاسخ</title>
-      <link>http://blog.khajavi.ir/question-and-answer/</link>
+      <link>http://blog.khajavi.ir/post/question-and-answer/</link>
       <pubDate>Wed, 06 May 2015 19:03:48 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/question-and-answer/</guid>
+      <guid>http://blog.khajavi.ir/post/question-and-answer/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;گوشزد ۱:&lt;/strong&gt; این نوشته برای ارائه به مرکز تحقیقات و نشر معارف اهل‌البیت یا هر شخصیّت حقیقی/حقوقی جهت تأمین هزینه‌های طرح، تنظیم شده است.
@@ -226,10 +226,10 @@ Money(300) &amp;lt; Money(200)
     
     <item>
       <title>طرح پیشنهادی نرم‌افزار شرح واژگان قرآن</title>
-      <link>http://blog.khajavi.ir/quran-project-proposal/</link>
+      <link>http://blog.khajavi.ir/post/quran-project-proposal/</link>
       <pubDate>Sat, 02 May 2015 10:54:59 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/quran-project-proposal/</guid>
+      <guid>http://blog.khajavi.ir/post/quran-project-proposal/</guid>
       <description>&lt;p&gt;&lt;strong&gt;گوشزد:&lt;/strong&gt; این نوشته برای ارائه به مرکز تحقیقات و نشر معارف اهل‌البیت یا هر شخصیّت حقیقی/حقوقی جهت تأمین هزینه‌های طرح، تنظیم شده است.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;گوشزد ۲:&lt;/strong&gt; در این نوشته، طرح به صورت کلّی بیان شده و از بیان جزئیات پرهیز شده است.&lt;/p&gt;
@@ -259,10 +259,10 @@ Money(300) &amp;lt; Money(200)
     
     <item>
       <title>معرّفی پروژهٔ تنزیل</title>
-      <link>http://blog.khajavi.ir/tanzil/</link>
+      <link>http://blog.khajavi.ir/post/tanzil/</link>
       <pubDate>Fri, 25 Nov 2011 06:56:18 +0430</pubDate>
       
-      <guid>http://blog.khajavi.ir/tanzil/</guid>
+      <guid>http://blog.khajavi.ir/post/tanzil/</guid>
       <description>&lt;p&gt;چندی پیش یکی از اعضای &lt;a href=&#34;http://zekr.org/&#34;&gt;پروژهٔ قرآنی ذکر&lt;/a&gt;، پیامی به گروه فرستاد جهت تولید نرم‌افزار مشابه ذکر برای اندروید، پس از اون با پروژهٔ &lt;a href=&#34;https://github.com/ahmedre/quran_android&#34;&gt;Quran Android&lt;/a&gt; آشنا شدم که در همین راستا گام برداشته‌اند در حین کار با این نرم‌افزار با &lt;a href=&#34;http://tanzil.net/&#34;&gt;پروژهٔ قرآنی تنزیل&lt;/a&gt; که توسط دکتر &lt;a href=&#34;http://sharif.edu/~zarrabi/&#34;&gt;حمید ضرابی‌زاده&lt;/a&gt; تأسیس شده است، آشنا شدم.&lt;/p&gt;
 
 &lt;p&gt;همان‌طور که در &lt;a href=&#34;http://tanzil.net/wiki/Tanzil_Project&#34;&gt;صفحهٔ ویکی پروژه&lt;/a&gt; ذکر شده، این وب‌گاه در نظر دارد یک متن دقیقِ استاندارد از متن قرآن کریم را بر روی اینترنت قرار دهد. این کار از سال ۲۰۰۷ شروع شده و تا کنون بسیاری از برنامه‌نویسان از این منبع برای دسترسی به متن قرآن از آن استفاده می‌کنند.&lt;/p&gt;
