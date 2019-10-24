@@ -6,8 +6,22 @@
     <description>Recent content on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Sun, 06 Oct 2019 01:06:51 +0330</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 13:21:50 +0330</lastBuildDate>
     <atom:link href="http://blog.khajavi.ir/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Click-through rate (CTR)</title>
+      <link>http://blog.khajavi.ir/post/click-through-rate/</link>
+      <pubDate>Thu, 24 Oct 2019 13:21:50 +0330</pubDate>
+      
+      <guid>http://blog.khajavi.ir/post/click-through-rate/</guid>
+      <description>&lt;p&gt;For calculating CTR (Click Through Rate) we can create two activity stream:
+1. Search Events
+2. Click Events&lt;/p&gt;
+
+&lt;p&gt;create table of two corresponding search events and click events with &lt;em&gt;Stream-stream join&lt;/em&gt;, so we can count number of clicks and number of total search and calculate CTR.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Knapsack</title>
