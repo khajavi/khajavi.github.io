@@ -15,11 +15,14 @@
       <pubDate>Thu, 24 Oct 2019 13:21:50 +0330</pubDate>
       
       <guid>http://blog.khajavi.ir/post/click-through-rate/</guid>
-      <description>&lt;p&gt;For calculating CTR (Click Through Rate) we can create two activity stream:
-1. Search Events
-2. Click Events&lt;/p&gt;
+      <description>&lt;p&gt;For calculating CTR (Click Through Rate) we can create two activity stream:&lt;/p&gt;
 
-&lt;p&gt;create table of two corresponding search events and click events with &lt;em&gt;Stream-stream join&lt;/em&gt;, so we can count number of clicks and number of total search and calculate CTR.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Search Events&lt;/li&gt;
+&lt;li&gt;Click Events&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;create table of two corresponding search events and click events with &lt;em&gt;Stream-stream join&lt;/em&gt; using one of Stream Processing engine, so we can count number of clicks and number of total search and calculate CTR.&lt;/p&gt;
 </description>
     </item>
     
