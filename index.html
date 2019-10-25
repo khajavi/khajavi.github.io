@@ -77,6 +77,33 @@
       <div class="post">
       
       <h1 class="post-title">
+        <a href="http://blog.khajavi.ir/post/how-to-install-graalvm-ce/">How to install graalvm ce</a>
+      </h1>
+      <span class="post-date">Oct 25, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/how-to-install-graalvm-ce/#disqus_thread">Comments</a>
+      
+      <br/>
+      
+      </span>
+      
+      <pre><code class="language-bash">wget https://github.com/oracle/graal/releases/download/vm-19.2.1/graalvm-ce-linux-amd64-19.2.1.tar.gz
+tar xvf graalvm-ce-linux-amd64-19.2.1.tar.gz
+sudo mv graalvm-ce-19.2.1/ /usr/lib/jvm/
+sudo ln -s graalvm-ce-19.2.1/ graalvm
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/graalvm/bin/java 4
+sudo update-alternatives --config java // choose 4
+</code></pre>
+
+<p>add <code>/usr/lib/jvm/graalvm-ce-19.2.1/bin</code> to $PATH</p>
+
+<p>install <code>native-image</code> by running <code>gu install native-image</code></p>
+
+      
+    </div>
+    
+      
+      <div class="post">
+      
+      <h1 class="post-title">
         <a href="http://blog.khajavi.ir/post/click-through-rate/">Calculate click-through rate (CTR) with Stream Processing</a>
       </h1>
       <span class="post-date">Oct 24, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/click-through-rate/#disqus_thread">Comments</a>
@@ -210,42 +237,6 @@ println(mohammad)
 
 <pre><code>Ali,25
 Person(Mohammad,23)
-</code></pre>
-
-      
-    </div>
-    
-      
-      <div class="post">
-      
-      <h1 class="post-title">
-        <a href="http://blog.khajavi.ir/post/scala-contramap/">Scala Contramap</a>
-      </h1>
-      <span class="post-date">Aug 10, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/scala-contramap/#disqus_thread">Comments</a>
-      
-      <br/>
-      
-      </span>
-      
-      <p>Contramap function have the following definition:</p>
-
-<pre><code class="language-scala">def contramap[A, B](fa: F[A])(f: B =&gt; A): F[B]
-</code></pre>
-
-<p>For example <code>scala.math.Ordering</code> have <code>by</code> function that is contramap, we can create Complicated orderings by use of Simple Orderings.</p>
-
-<pre><code class="language-scala">def by[T, S](f: T =&gt; S)(implicit ord: Ordering[S]): Ordering[T]
-</code></pre>
-
-<p>Create Ordering for type Money with <code>by</code> contramap</p>
-
-<pre><code class="language-scala">case class Money(amount: Int)
-
-import scala.math.Ordered._
-
-implicit val moneyOrdering: Ordering[Money] = Ordering.by(_.amount)
-
-Money(300) &lt; Money(200)
 </code></pre>
 
       

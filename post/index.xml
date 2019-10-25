@@ -6,8 +6,28 @@
     <description>Recent content in Post-rsses on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Thu, 24 Oct 2019 13:21:50 +0330</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 08:59:54 +0330</lastBuildDate>
     <atom:link href="http://blog.khajavi.ir/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to install graalvm ce</title>
+      <link>http://blog.khajavi.ir/post/how-to-install-graalvm-ce/</link>
+      <pubDate>Fri, 25 Oct 2019 08:59:54 +0330</pubDate>
+      
+      <guid>http://blog.khajavi.ir/post/how-to-install-graalvm-ce/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget https://github.com/oracle/graal/releases/download/vm-19.2.1/graalvm-ce-linux-amd64-19.2.1.tar.gz
+tar xvf graalvm-ce-linux-amd64-19.2.1.tar.gz
+sudo mv graalvm-ce-19.2.1/ /usr/lib/jvm/
+sudo ln -s graalvm-ce-19.2.1/ graalvm
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/graalvm/bin/java 4
+sudo update-alternatives --config java // choose 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;add &lt;code&gt;/usr/lib/jvm/graalvm-ce-19.2.1/bin&lt;/code&gt; to $PATH&lt;/p&gt;
+
+&lt;p&gt;install &lt;code&gt;native-image&lt;/code&gt; by running &lt;code&gt;gu install native-image&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Calculate click-through rate (CTR) with Stream Processing</title>
