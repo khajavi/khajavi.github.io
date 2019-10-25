@@ -25,7 +25,7 @@ sudo update-alternatives --config java // choose 4
 
 &lt;p&gt;add &lt;code&gt;/usr/lib/jvm/graalvm-ce-19.2.1/bin&lt;/code&gt; to $PATH&lt;/p&gt;
 
-&lt;p&gt;install &lt;code&gt;native-image&lt;/code&gt; by running &lt;code&gt;gu install native-image&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you want install &lt;code&gt;native-image&lt;/code&gt; run &lt;code&gt;gu install native-image&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
