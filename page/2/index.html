@@ -77,6 +77,89 @@
       <div class="post">
       
       <h1 class="post-title">
+        <a href="http://blog.khajavi.ir/post/scala-intramap/">Scala Intramap</a>
+      </h1>
+      <span class="post-date">Aug 20, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/scala-intramap/#disqus_thread">Comments</a>
+      
+      <br/>
+      
+      </span>
+      
+      <p>Intramap have following definition:</p>
+
+<pre><code class="language-scala">def imap[A, B](fa: F[A])(f: A =&gt; B)(g: B =&gt; A): F[B]
+</code></pre>
+
+<p>So when you have Funtor[A] and you want to create new Functor[B] which is invariant with Functor[A] you can use <code>imap</code> method.</p>
+
+<p>In following example, You I&rsquo;ve wrote Codec for <code>Person</code> type, by using <code>String</code> Codec.</p>
+
+<pre><code class="language-scala">trait Codec[A] {
+  self =&gt;
+  def encode(value: A): String
+
+  def decode(value: String): A
+
+  def imap[B](dec: A =&gt; B, enc: B =&gt; A): Codec[B] = new Codec[B] {
+    override def encode(value: B): String =
+      self.encode(enc(value))
+
+    override def decode(value: String): B =
+      dec(self.decode(value))
+  }
+}
+
+def encode[A](value: A)(implicit c: Codec[A]): String = c.encode(value)
+
+def decode[A](value: String)(implicit c: Codec[A]): A = c.decode(value)
+
+
+object CodecImplicits {
+
+
+  implicit val stringCodec: Codec[String] = new Codec[String] {
+    override def encode(value: String): String = value
+
+    override def decode(value: String): String = value
+  }
+
+  implicit val intCodec: Codec[Int] = stringCodec.imap(
+    _.toInt, _.toString
+  )
+}
+
+import CodecImplicits._
+
+case class Person(name: String, age: Int)
+
+implicit val personCodec: Codec[Person] = stringCodec.imap[Person](
+  str =&gt; {
+    val lines = str.split(',')
+    Person(decode[String](lines(0)), decode[Int](lines(1)))
+  },
+  person =&gt; s&quot;${person.name},${person.age}&quot;
+)
+
+val ali: String = encode[Person](Person(&quot;Ali&quot;, 25))
+val mohammad: Person = decode[Person](&quot;Mohammad,23&quot;)
+
+println(ali)
+println(mohammad)
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>Ali,25
+Person(Mohammad,23)
+</code></pre>
+
+      
+    </div>
+    
+      
+      <div class="post">
+      
+      <h1 class="post-title">
         <a href="http://blog.khajavi.ir/post/scala-contramap/">Scala Contramap</a>
       </h1>
       <span class="post-date">Aug 10, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/scala-contramap/#disqus_thread">Comments</a>
@@ -253,40 +336,6 @@ Money(300) &lt; Money(200)
       
     </div>
     
-      
-      <div class="post" dir="rtl">
-      
-      <h1 class="post-title">
-        <a href="http://blog.khajavi.ir/post/tanzil/">معرّفی پروژهٔ تنزیل</a>
-      </h1>
-      <span class="post-date">Nov 25, 2011 &middot; 2 minute read &middot; <a href="http://blog.khajavi.ir/post/tanzil/#disqus_thread">Comments</a>
-      </span>
-      
-      <p>چندی پیش یکی از اعضای <a href="http://zekr.org/">پروژهٔ قرآنی ذکر</a>، پیامی به گروه فرستاد جهت تولید نرم‌افزار مشابه ذکر برای اندروید، پس از اون با پروژهٔ <a href="https://github.com/ahmedre/quran_android">Quran Android</a> آشنا شدم که در همین راستا گام برداشته‌اند در حین کار با این نرم‌افزار با <a href="http://tanzil.net/">پروژهٔ قرآنی تنزیل</a> که توسط دکتر <a href="http://sharif.edu/~zarrabi/">حمید ضرابی‌زاده</a> تأسیس شده است، آشنا شدم.</p>
-
-<p>همان‌طور که در <a href="http://tanzil.net/wiki/Tanzil_Project">صفحهٔ ویکی پروژه</a> ذکر شده، این وب‌گاه در نظر دارد یک متن دقیقِ استاندارد از متن قرآن کریم را بر روی اینترنت قرار دهد. این کار از سال ۲۰۰۷ شروع شده و تا کنون بسیاری از برنامه‌نویسان از این منبع برای دسترسی به متن قرآن از آن استفاده می‌کنند.</p>
-
-<p>تنزیل سالیانه چیزی حدود ۸۸٫۵ میلیون صفحه قرآن کریم را نمایش می‌دهد که حدوداً برابر است با ۱۴۶ هزار بار نمایش تمام صفحات قرآن کریم. سالیانه ۷۰۵ میلیون آیه توسط این پروژه شنیده می‌شود که برابر است با ۱۱۳ هزار بار تمام قرآن کریم. سالیانه ۷۷ ترابایت پهنای باند مصرف می‌کند که حدوداً برابر است با ۱۱۸ هزار سی‌دی صوتی که برای برپایی و نگهداری تنزیل، سالیانه دو هزار و پانصد دلار هزینه می‌شود. نکتهٔ قابل توجه دیگر اینکه <a href="http://tanzil.net/wiki/Donation">به قول تنزیل</a>:</p>
-
-<p>شما می‌توانید با هر دلار اعانه و کمک به این پروژه خواندن ۱۸ هزار صفحهٔ قرآن و استماع ۱۴۰ هزار آیه را برای بیش از دو هزار بازدیدکننده فراهم کنید. این کار به راستی سرمایه‌گذاری بزرگی‌ست.</p>
-
-<p>معرفی بیشتر تنزیل را با ذکر چند پیوند مفید به پایان می‌رسانم:</p>
-
-<ul>
-<li><a href="http://tanzil.net/download/">متن قرآن کریم</a>.</li>
-<li><a href="http://tanzil.net/wiki/Quran_Metadata">فراداده‌های قرآن کریم</a>.</li>
-<li><a href="http://tanzil.net/trans/">ترجمه‌های قرآن کریم به زبان‌های گوناگون</a></li>
-<li><a href="http://tanzil.net/wiki/Adding_New_Recitations">چگونه تلاوت جدیدی به پروژه اضافه کنیم؟</a></li>
-<li><a href="http://tanzil.net/wiki/Who_is_using_Tanzil">چه پروژه‌هایی از تنزیل استفاده می‌کنند؟</a></li>
-</ul>
-
-<p>تنزیل یک نمونهٔ موفق در حوزهٔ علوم اسلامی‌ست، و همچنین الگویی برای برنامه‌نویسانی که می‌خواهند در زمینهٔ علوم اسلامی گامی در علوم رایانه بردارند. تنزیل دو کاربر را مورد هدف قرار داده است، یکی کاربر معمولی و دیگری برنامه‌نویسان. برنامه‌نویسانی که بخواهند در زمینهٔ نرم‌افزارهای قرآنی فعالیت کنند، به راحتی می‌توانند از پایگاه داده‌هایی که تنزیل در اختیار آن‌ها قرار می‌دهد، استفاده کنند.</p>
-
-<p>بزرگ‌ترین درسی که می‌توان از این پروژه گرفت، این است که سعی کنیم محتوای ارزشمندی تولید کنیم و آن را به طور آزاد در اختیار عموم قرار دهیم. در حال حاضر کتابخانه‌های دیجیتال بسیاری در زمینهٔ علوم اسلامی فعالیت می‌کنند، اما افسوس که اکثر و شاید همگی این کتابخانه‌های دیجیتال، تمرکز خود را بر نمایش محتوا و کتاب قرار داده‌اند، هیچ کدام را ندیده‌ام که به طور جد بر تولید محتوای ارزشمند تمرکز کنند و این محتوا را به طور عام در اختیار برنامه‌نویسان و عموم مردم قرار دهند.</p>
-
-      
-    </div>
-    
     
     
     <ul class="pagination">
@@ -307,12 +356,15 @@ Money(300) &lt; Money(200)
         class="active"><a href="http://blog.khajavi.ir/page/2/">2</a></li>
         
         <li
-        class="disabled">
-        <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        ><a href="http://blog.khajavi.ir/page/3/">3</a></li>
+        
+        <li
+        >
+        <a href="http://blog.khajavi.ir/page/3/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
         <li>
-            <a href="http://blog.khajavi.ir/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            <a href="http://blog.khajavi.ir/page/3/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
         </li>
         
     </ul>

@@ -77,6 +77,33 @@
       <div class="post">
       
       <h1 class="post-title">
+        <a href="http://blog.khajavi.ir/post/how-to-get-rid-of-scalac-server-exception-in-intellij-idea/">How to get rid of scalac server exception in intellij idea (StackOverflowError)</a>
+      </h1>
+      <span class="post-date">Oct 26, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/how-to-get-rid-of-scalac-server-exception-in-intellij-idea/#disqus_thread">Comments</a>
+      
+      <br/>
+      
+      </span>
+      
+      <p>If your scala code base in IntelliJ Idea is very large, when you run then program in Intellij Idea, you may encounter this error:</p>
+
+<pre><code class="language-scala">Error:scalac: Error: org.jetbrains.jps.incremental.scala.remote.ServerException
+java.lang.StackOverflowError
+  at scala.reflect.internal.tpe.TypeMaps$TypeMap.mapOver(TypeMaps.scala:114)
+  at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.apply(TypeMaps.scala:513)
+  at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.apply(TypeMaps.scala:483)
+...
+</code></pre>
+
+<p>Increase stack size for compiler process (in Settings | Build, Execution, Deployment | Compiler | User-local build process VM options (overrides Shared options)) to e.g. -Xss4m</p>
+
+      
+    </div>
+    
+      
+      <div class="post">
+      
+      <h1 class="post-title">
         <a href="http://blog.khajavi.ir/post/how-to-install-graalvm-ce/">How to install graalvm ce</a>
       </h1>
       <span class="post-date">Oct 25, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/how-to-install-graalvm-ce/#disqus_thread">Comments</a>
@@ -159,89 +186,6 @@ sudo update-alternatives --config java // choose 4
       
     </div>
     
-      
-      <div class="post">
-      
-      <h1 class="post-title">
-        <a href="http://blog.khajavi.ir/post/scala-intramap/">Scala Intramap</a>
-      </h1>
-      <span class="post-date">Aug 20, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/scala-intramap/#disqus_thread">Comments</a>
-      
-      <br/>
-      
-      </span>
-      
-      <p>Intramap have following definition:</p>
-
-<pre><code class="language-scala">def imap[A, B](fa: F[A])(f: A =&gt; B)(g: B =&gt; A): F[B]
-</code></pre>
-
-<p>So when you have Funtor[A] and you want to create new Functor[B] which is invariant with Functor[A] you can use <code>imap</code> method.</p>
-
-<p>In following example, You I&rsquo;ve wrote Codec for <code>Person</code> type, by using <code>String</code> Codec.</p>
-
-<pre><code class="language-scala">trait Codec[A] {
-  self =&gt;
-  def encode(value: A): String
-
-  def decode(value: String): A
-
-  def imap[B](dec: A =&gt; B, enc: B =&gt; A): Codec[B] = new Codec[B] {
-    override def encode(value: B): String =
-      self.encode(enc(value))
-
-    override def decode(value: String): B =
-      dec(self.decode(value))
-  }
-}
-
-def encode[A](value: A)(implicit c: Codec[A]): String = c.encode(value)
-
-def decode[A](value: String)(implicit c: Codec[A]): A = c.decode(value)
-
-
-object CodecImplicits {
-
-
-  implicit val stringCodec: Codec[String] = new Codec[String] {
-    override def encode(value: String): String = value
-
-    override def decode(value: String): String = value
-  }
-
-  implicit val intCodec: Codec[Int] = stringCodec.imap(
-    _.toInt, _.toString
-  )
-}
-
-import CodecImplicits._
-
-case class Person(name: String, age: Int)
-
-implicit val personCodec: Codec[Person] = stringCodec.imap[Person](
-  str =&gt; {
-    val lines = str.split(',')
-    Person(decode[String](lines(0)), decode[Int](lines(1)))
-  },
-  person =&gt; s&quot;${person.name},${person.age}&quot;
-)
-
-val ali: String = encode[Person](Person(&quot;Ali&quot;, 25))
-val mohammad: Person = decode[Person](&quot;Mohammad,23&quot;)
-
-println(ali)
-println(mohammad)
-</code></pre>
-
-<p>Result:</p>
-
-<pre><code>Ali,25
-Person(Mohammad,23)
-</code></pre>
-
-      
-    </div>
-    
     
     
     <ul class="pagination">
@@ -262,12 +206,15 @@ Person(Mohammad,23)
         ><a href="http://blog.khajavi.ir/page/2/">2</a></li>
         
         <li
+        ><a href="http://blog.khajavi.ir/page/3/">3</a></li>
+        
+        <li
         >
         <a href="http://blog.khajavi.ir/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
         <li>
-            <a href="http://blog.khajavi.ir/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            <a href="http://blog.khajavi.ir/page/3/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
         </li>
         
     </ul>
