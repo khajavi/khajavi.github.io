@@ -77,6 +77,24 @@
       <div class="post">
       
       <h1 class="post-title">
+        <a href="http://blog.khajavi.ir/post/conversion-between-dto-and-entity-classes-in-scala/">Conversion Between DTO and Entity Classes in Scala</a>
+      </h1>
+      <span class="post-date">Sep 9, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/conversion-between-dto-and-entity-classes-in-scala/#disqus_thread">Comments</a>
+      </span>
+      
+      <p>When you practicing DDD (Domain-Driven-Design), you need to create different bounded countexts, for example when you receive DTO object <code>PersonDTO</code>, It should be mapped to <code>PersonEntity</code>. This conversion, have lots of repetitive works to copy fields of one object to another.</p>
+
+<p>In scala there is type-safa data transoformer <a href="https://github.com/scalalandio/chimney">chimney</a> which can do it for you with macros and providing simple dsl for it.</p>
+
+<p><a href="https://github.com/bfil/scala-automapper">Scala-Automapper</a> is another library which is similar to <code>chimney</code> but when you have some difference in fields type, you can&rsquo;t do it, easily like <code>chimney</code></p>
+
+      
+    </div>
+    
+      
+      <div class="post">
+      
+      <h1 class="post-title">
         <a href="http://blog.khajavi.ir/post/scala-intramap/">Scala Intramap</a>
       </h1>
       <span class="post-date">Aug 20, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/scala-intramap/#disqus_thread">Comments</a>
@@ -295,43 +313,6 @@ Money(300) &lt; Money(200)
 <p>که در میان این نمونه‌های خوب، نمونهٔ مناسبی برای زبان فارسی وجود ندارد، به همین جهت مناسب است که در راه‌اندازی چنین سایتی تلاش کنیم.</p>
 
 <p>و در انتها، این نوشته را با جملهٔ زیبایی از هیدگر به پایان می‌رسانم که می‌گفت «پرسش، تقوی تفکر است».</p>
-
-      
-    </div>
-    
-      
-      <div class="post" dir="rtl">
-      
-      <h1 class="post-title">
-        <a href="http://blog.khajavi.ir/post/quran-project-proposal/">طرح پیشنهادی نرم‌افزار شرح واژگان قرآن</a>
-      </h1>
-      <span class="post-date">May 2, 2015 &middot; 2 minute read &middot; <a href="http://blog.khajavi.ir/post/quran-project-proposal/#disqus_thread">Comments</a>
-      </span>
-      
-      <p><strong>گوشزد:</strong> این نوشته برای ارائه به مرکز تحقیقات و نشر معارف اهل‌البیت یا هر شخصیّت حقیقی/حقوقی جهت تأمین هزینه‌های طرح، تنظیم شده است.</p>
-
-<p><strong>گوشزد ۲:</strong> در این نوشته، طرح به صورت کلّی بیان شده و از بیان جزئیات پرهیز شده است.</p>
-
-<p>در حال حاضر برای خواندن متن قرآن نرم‌افزارهایی از جمله <a href="http://tanzil.net">تنزیل</a>، <a href="quran.com">قرآن دات کام</a> و <a href="http://quran.ahlolbait.com/">قرآن اهل‌البیت</a> موجود است. این پروژه‌ها معنی تمام آیه را به زبا‌ن‌های مختلف قرار می‌دهند اما معنای واژگان قرآن را ارائه نمی‌دهند. البته پروژه‌های</p>
-
-<ul>
-<li><a href="http://alpha.quran.com/">آلفا دات قرآن دات کام</a></li>
-<li><a href="http://www.almaany.com/quran">المعانی</a></li>
-</ul>
-
-<p>معانی واژگان را فقط به زبان انگلیسی ارائه می‌دهد که این کار برای فارسی‌زبان‌ها و دیگر کاربران غیر‌انگلیسی زبان کافی نیست.</p>
-
-<p>پیشنهاد می‌شود که پروژه‌ای راه‌اندازی شود دارای ویژگی‌های زیر باشد.</p>
-
-<ol>
-<li>برای جذب مشارکت عمومی حتماً به صورت نرم‌افزار آزاد ارائه شود.</li>
-<li>در فاز اول برای کاربران فارسی‌زبان امکان نمایش ترجمهٔ تک تک واژگان قرآن از عربی به فارسی را داشته باشد. به طوری که کاربر با کلیک بر روی تک تک واژگان بتواند به صورت تعاملی برابر فارسی واژهٔ قرآنی را مشاهد کند. برای مثال مراجعه کنید به <a href="http://alpha.quran.com/">نمونهٔ انگلیسی آن</a></li>
-<li>در فازهای بعدی با جذب برنامه‌نویسان از سرتاسر دنیا نرم‌افزار را برای دیگر زبان‌ها آماده کرد.</li>
-</ol>
-
-<p>برای دریافت داده‌ها می‌توان با ناشران کتاب‌های <a href="http://bookroom.ir/book/5380">قرآن با ترجمه و شرح واژگان آقای بهرام‌پور</a> و <a href="http://makarem.ir/newmain.aspx?lid=0&amp;mid=61913&amp;CatID=6509&amp;typeinfo=3">لغات در تفسیر نمونه</a> همکاری کرد.</p>
-
-<p>این پروژه متعلق به هیچ سازمانی نخواهد بود، اما افراد حقیقی/حقوقی مانند خیرین، سازمان‌ها و شرکت‌ها می‌توانند در تهیهٔ هزینه‌های آن مشارکت داشته باشند.</p>
 
       
     </div>

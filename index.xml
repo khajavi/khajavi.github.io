@@ -6,8 +6,18 @@
     <description>Recent content on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Sat, 26 Oct 2019 08:35:31 +0330</lastBuildDate>
+    <lastBuildDate>Sat, 26 Oct 2019 21:55:53 +0330</lastBuildDate>
     <atom:link href="http://blog.khajavi.ir/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Write language with truffle</title>
+      <link>http://blog.khajavi.ir/post/write-language-with-truffle/</link>
+      <pubDate>Sat, 26 Oct 2019 21:55:53 +0330</pubDate>
+      
+      <guid>http://blog.khajavi.ir/post/write-language-with-truffle/</guid>
+      <description>&lt;p&gt;Graal have truffle language framework, that you can write your language with this framework. You can see the example of language with truffle here: &lt;a href=&#34;https://github.com/graalvm/simplelanguage&#34;&gt;https://github.com/graalvm/simplelanguage&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to get rid of scalac server exception in intellij idea - StackOverflowError</title>
