@@ -17,6 +17,10 @@
       <guid>http://blog.khajavi.ir/post/anki-automation/</guid>
       <description>&lt;p&gt;I wrote following script, to automate adding new card to my Anki decks. When I encounter new word or phrase, I select that word and press &lt;em&gt;Ctrl+i&lt;/em&gt; to enter it into the Anki deck. befor anythin, you should install &lt;em&gt;Anki Connect&lt;/em&gt; plugin.&lt;/p&gt;
 
+&lt;p&gt;Add shortcut for this script:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.khajavi.ir/img/keyboard.png&#34; alt=&#34;Keyboard Shortcut&#34; /&gt;&lt;/p&gt;
+
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
 clipboard=&amp;quot;$(xclip -out -selection)&amp;quot;
 clipboard=$(jq -aR . &amp;lt;&amp;lt;&amp;lt; $clipboard)
