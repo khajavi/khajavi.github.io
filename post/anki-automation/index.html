@@ -80,10 +80,6 @@
     </span>
     <p>I wrote following script, to automate adding new card to my Anki decks. When I encounter new word or phrase, I select that word and press <em>Ctrl+i</em> to enter it into the Anki deck. befor anythin, you should install <em>Anki Connect</em> plugin.</p>
 
-<p>Add shortcut for this script:</p>
-
-<p><img src="http://blog.khajavi.ir/img/keyboard.png" alt="Keyboard Shortcut" /></p>
-
 <pre><code class="language-bash">#!/bin/bash
 clipboard=&quot;$(xclip -out -selection)&quot;
 clipboard=$(jq -aR . &lt;&lt;&lt; $clipboard)
@@ -122,6 +118,10 @@ else
       notify-send &quot;Failed&quot; &quot;adding ${clipboard} failed&quot;
 fi
 </code></pre>
+
+<p>Add shortcut for above script:</p>
+
+<p><img src="http://blog.khajavi.ir/img/keyboard.png" alt="Keyboard Shortcut" /></p>
 
   </div>
   <div id="disqus_thread"></div>
