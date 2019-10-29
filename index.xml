@@ -6,8 +6,57 @@
     <description>Recent content on یادداشتهای میلاد خواجوی</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fa-ir</language>
-    <lastBuildDate>Sat, 26 Oct 2019 22:59:56 +0330</lastBuildDate>
+    <lastBuildDate>Tue, 29 Oct 2019 11:37:59 +0330</lastBuildDate>
     <atom:link href="http://blog.khajavi.ir/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Anki automation</title>
+      <link>http://blog.khajavi.ir/post/anki-automation/</link>
+      <pubDate>Tue, 29 Oct 2019 11:37:59 +0330</pubDate>
+      
+      <guid>http://blog.khajavi.ir/post/anki-automation/</guid>
+      <description>&lt;p&gt;I wrote following script, to automate adding new card to my Anki decks. When I encounter new word or phrase, I select that word and press &lt;em&gt;Ctrl+i&lt;/em&gt; to enter it into the Anki deck. befor anythin, you should install &lt;em&gt;Anki Connect&lt;/em&gt; plugin.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+clipboard=&amp;quot;$(xclip -out -selection)&amp;quot;
+clipboard=$(jq -aR . &amp;lt;&amp;lt;&amp;lt; $clipboard)
+
+data=&#39;{
+  &amp;quot;action&amp;quot;: &amp;quot;addNote&amp;quot;,
+  &amp;quot;version&amp;quot;: 6,
+  &amp;quot;params&amp;quot;: {
+      &amp;quot;note&amp;quot;: {
+          &amp;quot;deckName&amp;quot;: &amp;quot;default&amp;quot;,
+          &amp;quot;modelName&amp;quot;: &amp;quot;Basic&amp;quot;,
+          &amp;quot;fields&amp;quot;: {
+              &amp;quot;Front&amp;quot;: &#39;&amp;quot;$clipboard&amp;quot;&#39;,
+              &amp;quot;Back&amp;quot;: &amp;quot;&amp;quot;
+          },
+          &amp;quot;options&amp;quot;: {
+              &amp;quot;allowDuplicate&amp;quot;: false
+          },
+          &amp;quot;tags&amp;quot;: [
+              &amp;quot;api&amp;quot;
+          ]
+      }
+  }
+}&#39;
+
+resp=$(curl -X POST \
+  http://localhost:8765/ \
+  -H &#39;content-type: application/json&#39; \
+  -d &amp;quot;$data&amp;quot;)
+
+r=$(jq &#39;.error&#39; &amp;lt;&amp;lt;&amp;lt; &amp;quot;$resp&amp;quot;)
+
+if [ &amp;quot;$r&amp;quot; == &amp;quot;null&amp;quot; ]; then
+      notify-send &amp;quot;Success&amp;quot; &amp;quot;${clipboard} is added&amp;quot;
+else
+      notify-send &amp;quot;Failed&amp;quot; &amp;quot;adding ${clipboard} failed&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>نامهٔ حضرت امیرالمؤمنین علیه السلام به پسرشان امام حسن علیه السلام</title>

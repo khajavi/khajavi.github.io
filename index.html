@@ -74,6 +74,62 @@
     
     
       
+      <div class="post">
+      
+      <h1 class="post-title">
+        <a href="http://blog.khajavi.ir/post/anki-automation/">Anki automation</a>
+      </h1>
+      <span class="post-date">Oct 29, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/anki-automation/#disqus_thread">Comments</a>
+      
+      <br/>
+      
+      </span>
+      
+      <p>I wrote following script, to automate adding new card to my Anki decks. When I encounter new word or phrase, I select that word and press <em>Ctrl+i</em> to enter it into the Anki deck. befor anythin, you should install <em>Anki Connect</em> plugin.</p>
+
+<pre><code class="language-bash">#!/bin/bash
+clipboard=&quot;$(xclip -out -selection)&quot;
+clipboard=$(jq -aR . &lt;&lt;&lt; $clipboard)
+
+data='{
+  &quot;action&quot;: &quot;addNote&quot;,
+  &quot;version&quot;: 6,
+  &quot;params&quot;: {
+      &quot;note&quot;: {
+          &quot;deckName&quot;: &quot;default&quot;,
+          &quot;modelName&quot;: &quot;Basic&quot;,
+          &quot;fields&quot;: {
+              &quot;Front&quot;: '&quot;$clipboard&quot;',
+              &quot;Back&quot;: &quot;&quot;
+          },
+          &quot;options&quot;: {
+              &quot;allowDuplicate&quot;: false
+          },
+          &quot;tags&quot;: [
+              &quot;api&quot;
+          ]
+      }
+  }
+}'
+
+resp=$(curl -X POST \
+  http://localhost:8765/ \
+  -H 'content-type: application/json' \
+  -d &quot;$data&quot;)
+
+r=$(jq '.error' &lt;&lt;&lt; &quot;$resp&quot;)
+
+if [ &quot;$r&quot; == &quot;null&quot; ]; then
+      notify-send &quot;Success&quot; &quot;${clipboard} is added&quot;
+else
+      notify-send &quot;Failed&quot; &quot;adding ${clipboard} failed&quot;
+fi
+</code></pre>
+
+      
+    </div>
+    
+      
       <div class="post" dir="rtl">
       
       <h1 class="post-title">
@@ -504,30 +560,6 @@ sudo update-alternatives --config java // choose 4
 <p>add <code>/usr/lib/jvm/graalvm-ce-19.2.1/bin</code> to $PATH</p>
 
 <p>If you want install <code>native-image</code> run <code>gu install native-image</code></p>
-
-      
-    </div>
-    
-      
-      <div class="post">
-      
-      <h1 class="post-title">
-        <a href="http://blog.khajavi.ir/post/click-through-rate/">Calculate click-through rate (CTR) with Stream Processing</a>
-      </h1>
-      <span class="post-date">Oct 24, 2019 &middot; 1 minute read &middot; <a href="http://blog.khajavi.ir/post/click-through-rate/#disqus_thread">Comments</a>
-      
-      <br/>
-      
-      </span>
-      
-      <p>For calculating CTR (Click Through Rate) we can create two activity stream:</p>
-
-<ol>
-<li>Search Events</li>
-<li>Click Events</li>
-</ol>
-
-<p>create table of two corresponding search events and click events with <em>Stream-stream join</em> using one of Stream Processing engine, so we can count number of clicks and number of total search and calculate CTR.</p>
 
       
     </div>
