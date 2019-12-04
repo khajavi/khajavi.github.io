@@ -89,7 +89,11 @@
 
 <pre><code class="language-bash">#!/bin/bash
 clipboard=&quot;$(xclip -out -selection)&quot;
-clipboard=$(jq -aR . &lt;&lt;&lt; $clipboard)
+echo &quot;$clipboard&quot;
+clipboard=&quot;$(jshon -s &quot;$clipboard&quot; | sed  's/\\n/&lt;br&gt;/g')&quot;
+echo $clipboard
+#echo &quot;$clipboard&quot;
+#clipboard=$(jq -aR . &lt;&lt;&lt; $clipboard)
 
 data='{
   &quot;action&quot;: &quot;addNote&quot;,
@@ -121,8 +125,10 @@ r=$(jq '.error' &lt;&lt;&lt; &quot;$resp&quot;)
 
 if [ &quot;$r&quot; == &quot;null&quot; ]; then
       notify-send &quot;Success&quot; &quot;${clipboard} is added&quot;
+      paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 else
       notify-send &quot;Failed&quot; &quot;adding ${clipboard} failed&quot;
+      paplay /usr/share/sounds/freedesktop/stereo/dialog-error.oga
 fi
 </code></pre>
 

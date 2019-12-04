@@ -19,7 +19,11 @@
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
 clipboard=&amp;quot;$(xclip -out -selection)&amp;quot;
-clipboard=$(jq -aR . &amp;lt;&amp;lt;&amp;lt; $clipboard)
+echo &amp;quot;$clipboard&amp;quot;
+clipboard=&amp;quot;$(jshon -s &amp;quot;$clipboard&amp;quot; | sed  &#39;s/\\n/&amp;lt;br&amp;gt;/g&#39;)&amp;quot;
+echo $clipboard
+#echo &amp;quot;$clipboard&amp;quot;
+#clipboard=$(jq -aR . &amp;lt;&amp;lt;&amp;lt; $clipboard)
 
 data=&#39;{
   &amp;quot;action&amp;quot;: &amp;quot;addNote&amp;quot;,
@@ -51,8 +55,10 @@ r=$(jq &#39;.error&#39; &amp;lt;&amp;lt;&amp;lt; &amp;quot;$resp&amp;quot;)
 
 if [ &amp;quot;$r&amp;quot; == &amp;quot;null&amp;quot; ]; then
       notify-send &amp;quot;Success&amp;quot; &amp;quot;${clipboard} is added&amp;quot;
+      paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 else
       notify-send &amp;quot;Failed&amp;quot; &amp;quot;adding ${clipboard} failed&amp;quot;
+      paplay /usr/share/sounds/freedesktop/stereo/dialog-error.oga
 fi
 &lt;/code&gt;&lt;/pre&gt;
 
